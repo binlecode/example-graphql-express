@@ -75,14 +75,13 @@ This should be avoided. Use `DataLoader` lib to cache duplicate REST calls.
 Json server is used and loaded with a `db.json` file as mock backend REST data service.
 The seeding `db.json` file is created using [json-generator](https://www.json-generator.com/) online service.
 
-Switch code to `rest-api` branch, then:
 ```bash
 npm install json-server --save
 # start it
 node_modules/.bin/json-server -p 3456 --watch db.json
 ```
 
-Alternatively, run json-server in background:
+Alternatively, run json-server in background mode:
 ```bash
 node_modules/.bin/json-server -p 3456 --watch db.json >> ./json-server.log 2>&1 </dev/null &
 # then tail the log
