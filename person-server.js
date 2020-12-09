@@ -1,8 +1,10 @@
-import express from 'express';
-import { graphqlHTTP } from 'express-graphql';
+// import express from 'express';
+const express = require('express');
+// import { graphqlHTTP } from 'express-graphql';
+const { graphqlHTTP } = require('express-graphql');
 
-// in package.json, set "type" to "module"
-import schema from './person-schema.js';
+// import schema from './person-schema.js';
+const schema = require('./person-schema')
 
 const app = express();
 app.use(graphqlHTTP({
@@ -11,7 +13,3 @@ app.use(graphqlHTTP({
 }));
 app.listen(5000);
 console.log('Running a GraphQL API server at http://localhost:5000/graphql');
-
-
-
-

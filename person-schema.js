@@ -1,12 +1,21 @@
-import {
+// import {
+//     GraphQLInt,
+//     GraphQLList,
+//     GraphQLObjectType,
+//     GraphQLSchema,
+//     GraphQLString
+// } from 'graphql';
+
+const {
     GraphQLInt,
     GraphQLList,
     GraphQLObjectType,
     GraphQLSchema,
     GraphQLString
-} from 'graphql';
+} = require('graphql');
 
-import fetch from 'node-fetch';
+// import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 // this is the REST data endpoint
 const BASE_URL = 'http://localhost:3456';
@@ -72,6 +81,7 @@ const QueryType = new GraphQLObjectType({
     })
 })
 
-export default new GraphQLSchema({
+// export default new GraphQLSchema({
+module.exports = new GraphQLSchema({
     query: QueryType
 });

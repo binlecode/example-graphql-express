@@ -1,12 +1,10 @@
 
-// use node module import, in package.json set "type" to "module"
-
-// const express = require('express');
-import express from 'express';
-// const { graphqlHTTP } = require('express-graphql');
-import { graphqlHTTP } from 'express-graphql';
-// const { buildSchema } = require('graphql');
-import { buildSchema } from 'graphql';
+const express = require('express');
+// import express from 'express';
+const { graphqlHTTP } = require('express-graphql');
+// import { graphqlHTTP } from 'express-graphql';
+const { buildSchema } = require('graphql');
+// import { buildSchema } from 'graphql';
 
 
 // Construct a schema, using GraphQL schema language

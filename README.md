@@ -1,11 +1,20 @@
+# Example of GraphQL with Express NodeJS
 
+
+This repo holds simple examples of GraphQL API with Express.
 
 ## environment
 
-NodeJS version 13+
-Use node module import instead of ES require.
-In `package.json`, "type" is set to "module".
+NodeJS version 12+
 
+For NodeJs 12 compatiblity, ES6 `require` is used instead of NodeJS Module.
+
+To use node module import instead of ES require:
+- In `package.json`, "type" is set to "module"
+- Change all `require` to `import` statement
+- change `modules.exports = ...` to `export default ...` statement
+
+Run `npm install` before running example scripts.
 
 ## Basic graphql server with inline query schema
 
@@ -31,6 +40,8 @@ In GraphiQL web interface, put query like
   }
 }
 ```
+
+A javascript [`client`](./client.js) example shows how to use `fetch` to query graphql.
 
 
 ## Person graphql server
