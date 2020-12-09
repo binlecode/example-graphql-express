@@ -7,9 +7,9 @@ This repo holds simple examples of GraphQL API with Express.
 
 NodeJS version 12+
 
-For NodeJs 12 compatiblity, ES6 `require` is used instead of NodeJS Module.
+For NodeJs 12 compatiblity, CommonJS `require` is used instead of ES6 Module.
 
-To use node module import instead of ES require:
+To use node module `import` instead of `require`:
 - In `package.json`, "type" is set to "module"
 - Change all `require` to `import` statement
 - change `modules.exports = ...` to `export default ...` statement
@@ -49,7 +49,8 @@ A javascript [`client`](./client.js) example shows how to use `fetch` to query g
 This example follows: https://graphql.org/blog/rest-api-graphql-wrapper.
 
 The [`person-server`](./person-server.js) has an external graphql schema 
-definition [`person-schema`](./person-schema.js) file.
+definition [`person-schema`](./person-schema.js) file, 
+where schema is created prorammatically with GraphQL Types.
 
 Run `node person-server.js`, terminal will display:
 `Running a GraphQL API server at http://localhost:5000/graphql`
