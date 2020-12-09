@@ -67,7 +67,8 @@ In GraphiQL web interface, put query like
 **Note** that the `friends` nesting can go on and on.
 And this will cause pathological queries to data backend.
 
-This should be avoided. Use `DataLoader` lib to cache duplicate REST calls.
+This should be avoided. 
+Use [`DataLoader`](https://github.com/graphql/dataloader) lib to cache duplicate REST calls.
 
 
 #### json-server as backend REST data endpoints
