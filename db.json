@@ -1,0 +1,40 @@
+{
+    "people": [
+        {
+          "id": 0,
+          "age": 27,
+          "first_name": "Barron",
+          "last_name": "Jimenez",
+          "email": "barronjimenez@velos.com",
+          "phone": "+1 (895) 401-3332",
+          "friends": [
+            "1",
+            "2"
+          ]
+        },
+        {
+          "id": 1,
+          "age": 37,
+          "first_name": "Hayes",
+          "last_name": "Faulkner",
+          "email": "hayesfaulkner@velos.com",
+          "phone": "+1 (920) 464-3190",
+          "friends": [
+            "0",
+            "2"
+          ]
+        },
+        {
+          "id": 2,
+          "age": 33,
+          "first_name": "Sandy",
+          "last_name": "Hart",
+          "email": "sandyhart@velos.com",
+          "phone": "+1 (845) 566-2223",
+          "friends": [
+            "0",
+            "1"
+          ]
+        }
+    ]
+}
