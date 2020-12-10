@@ -44,6 +44,20 @@ In GraphiQL web interface, put query like
 A javascript [`client`](./client.js) example shows how to use `fetch` to query graphql.
 
 
+## Apollo graphql server
+
+The [`apollo-server`](./apollo-server.js) is a simple example of
+Apollo graphql server to offer graphql endpoints.
+
+This example is using apollo-server v2.x, so the new way of setting up the
+apollo server is adopted.
+See: https://www.apollographql.com/docs/apollo-server/migration-two-dot/#apollo-server-2-new-pattern
+
+The [`apollo-server-standalone`](./apollo-server-standalone.js) example shows
+Apollo graphql server in stand alone mode without explicitly adding middleware
+from Express.
+
+
 ## Person graphql server
 
 This example follows: https://graphql.org/blog/rest-api-graphql-wrapper.
