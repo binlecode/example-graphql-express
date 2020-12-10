@@ -1,4 +1,6 @@
 
+// A very simple express server with graphql middleware
+
 const express = require('express');
 // import express from 'express';
 const { graphqlHTTP } = require('express-graphql');
@@ -22,7 +24,7 @@ var schema = buildSchema(`
   }
 `);
 
-// use object type in graphql with class definition
+// use object type in graphql with ES class definition
 class RandomDie {
   constructor(numSides = 6) {
     this.numSides = numSides;
