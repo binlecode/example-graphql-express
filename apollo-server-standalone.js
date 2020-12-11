@@ -15,10 +15,18 @@ const { ApolloServer, gql } = require('apollo-server');
 const typeDefs = gql`
     type Query {
         hello: String
+        foos: [Foo]
+    }
+
+    type Foo {
+        name: String
     }
 `; 
 
-const resolvers = {
+// it is recommended to define resolvers separately from the schema
+// we can define separate node field resolvers for hello and foos
+
+const helloResolver = {
     Query: {
         hello: () => {
             return 'Hello Apollo is stand-alone !'
@@ -26,7 +34,21 @@ const resolvers = {
     }
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const fooResolver = {
+    Query: {
+        foos: () => {
+            return [
+                { name: 'fist foo' },
+                { name: 'second foo'} 
+            ]
+        }
+    }
+}
+
+const server = new ApolloServer({ 
+    typeDefs, 
+    resolvers: [helloResolver, fooResolver] 
+});
 
 server.listen({ port: 5000 }).then(({ url }) => {
     console.log(`Apollo graphql server is running at ${url}`);
