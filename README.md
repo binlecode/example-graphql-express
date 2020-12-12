@@ -96,8 +96,9 @@ And this will cause pathological queries to data backend.
 This should be avoided. 
 Use [`DataLoader`](https://github.com/graphql/dataloader) lib to cache duplicate REST calls.
 
+The person apollo server is backed by a REST data endpoint based on json-server.
 
-#### json-server as backend REST data endpoints
+## json-server as backend REST data endpoints
 
 Json server is used and loaded with a `db.json` file as mock backend REST data service.
 The seeding `db.json` file is created using [json-generator](https://www.json-generator.com/) online service.
@@ -125,6 +126,37 @@ Json-server provides both standard CRUDs as well as pagination, sorting, and tex
 It is nicely explained in this [post](https://blog.eleven-labs.com/en/json-server/) 
 and its github [documentation](https://github.com/typicode/json-server).
 
+## person CRUD with apollo graphql server
 
+The [`person-apollo-server`](./person-apollo-server.js) example extends the previous person graphql interface to CRUD use case, 
+and uses `apollo-server-express` graphql server lib.
 
+In this exmaple, apollo-server adds `express` as middleware. With `express` we can 
+add more middleware such as `cors` to support cross-origin javascript graphql clients.
 
+This example follows the best practice of separating graphql schema defintion 
+from resolvers functions.
+
+This example uses the same REST data backend by json-server.
+
+Example grapyql mutation calls are:
+```graphql
+mutation {
+  createPerson(
+    email: "test@abc.com",
+    firstName: "foo2",
+    lastName: "bar2"
+  ) {
+    email
+    firstName
+    lastName
+  }
+}
+```
+```graphql
+mutation {
+  deletePerson(
+    id: 6
+  )
+}
+```

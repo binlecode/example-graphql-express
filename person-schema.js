@@ -75,8 +75,7 @@ const QueryType = new GraphQLObjectType({
                 }
             },
             // resolve can take a promise!
-            // also takes in variables from context, such as args.id
-            resolve: (root, args) => getPersonByUrl(`/people/${args.id}/`)
+            resolve: (root, args, context, info) => getPersonByUrl(`/people/${args.id}/`)
         }
     })
 })
